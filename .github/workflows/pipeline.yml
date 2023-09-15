@@ -32,7 +32,7 @@ jobs:
       run: mvn test
 
     - name: Run SonarQube Scanner
-      uses: sonarsource/sonarqube-scan-action@master
+      uses: jimseiwert/sonarqube-scanner-windows@v1
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
