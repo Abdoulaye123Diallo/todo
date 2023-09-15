@@ -32,12 +32,17 @@ jobs:
       run: mvn test
 
 
-    - name:  Quality Gate
+    - name: Set up SonarQube Scanner
+      uses: sonarsource/setup-sonar-scanner@v1
+      with:
+        sonar-scanner-version: '4.6.1' # Spécifiez la version du scanner SonarQube que vous utilisez
+        java-version: '17' # Spécifiez la version de Java que vous utilisez
+
+    - name: Run SonarQube Scanner
+      run: sonar-scanner
       env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      run: 
-       mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
     
 
     - name: "Check Quality Gate" #can also use simple or double quotes
