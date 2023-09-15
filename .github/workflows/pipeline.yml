@@ -6,7 +6,7 @@ name: Java-Maven Simple Pipeline
 on:
   push:
     branches: [ "main", "dev" ] #just an example
-  pull_request:
+  pull_request: 
     branches: [ "main", "release" ] #just an example
 
 
@@ -15,7 +15,7 @@ jobs:
   build:
 
     #JIN WHAT ENV
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     #possibility to run in many env >>> runs-on: [ubuntu-latest, macOS-latest, windows-latest]
     #if: 1 > 2 # you should uncomment this line once inside your own branch
     steps:
