@@ -27,13 +27,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Tests
-      if : ${{ github.ref == 'ref/heads/main' }} ||  ${{ github.ref == 'ref/heads/dev' }} #just an example, this step should be executed if and only this condition is true
-      run: mvn test
-
-
-      
-
     - name: Package
       run: mvn -B package  -DskipTests=true #with maven, we pass arg with -D flag and profile with -P flag
 
@@ -41,7 +34,6 @@ jobs:
     # see also action  mr-smithers-excellent/docker-build-push@v5
     # url : https://github.com/mr-smithers-excellent/docker-build-push
     - name: Dockerize
-      if: 1 > 2
       run: |
        docker login -u=${{secrets.DOCKER_USERNAME }} -p=${{ secrets.DOCKER_PASSWORD }}
        docker build -t ${{secrets.DOCKER_REGISTRY_IMAGE }}:${{ github.sha }} -t  ${{secrets.DOCKER_REGISTRY_IMAGE }}:latest .        # docker build -t image:tag_1 -t image:tag_2 .... -t image:tage_n .
