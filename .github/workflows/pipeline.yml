@@ -15,7 +15,7 @@ jobs:
   build:
 
     #JIN WHAT ENV
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     #possibility to run in many env >>> runs-on: [ubuntu-latest, macOS-latest, windows-latest]
     #if: 1 > 2 # you should uncomment this line once inside your own branch
     steps:
