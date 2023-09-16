@@ -42,7 +42,6 @@ jobs:
 
 
     - name: Deploy
-      if: 1 > 2
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.WEB_SERVER_IP }}
