@@ -3,7 +3,7 @@ name: Java-Maven Simple Pipeline
 
 
 #CONDITION THAT SHOULD TRIGGER PIPELINE EXECUTION
-on:
+on: 
   push:
     branches: [ "main", "dev" ] #just an example
   pull_request:  
