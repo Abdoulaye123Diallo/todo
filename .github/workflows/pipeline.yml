@@ -7,7 +7,7 @@ on:
   push:
     branches: [ "main", "dev" ] #just an example
   pull_request:  
-    branches: [ "main", "release" ] #just an example
+    branches: [ "main", "release" ] #just an example 
 
 
 #JOBS OF THE PIPELINE
